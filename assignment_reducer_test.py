@@ -2,9 +2,6 @@
 
 from __future__ import annotations
 
-import ast
-from latexify import ast_utils, parser, test_utils
-
 from latexify.transformers.assignment_reducer import AssignmentReducer
 
 
@@ -58,7 +55,6 @@ def test_constant() -> None:
         ]
     )
     transformed = AssignmentReducer().visit(parser.parse_function(f))
-    test_utils.assert_ast_equal(transformed, expected)
 
 
 def test_nested() -> None:
